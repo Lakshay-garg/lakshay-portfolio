@@ -1,1 +1,33 @@
-<p>skills works!</p>
+<section class="skills-section" id="skills">
+  <div class="section-head">
+    <p class="eyebrow">/skills</p>
+    <span class="section-divider"></span>
+  </div>
+
+  <h2>
+    I CONSTANTLY TRY TO
+    <span class="cycle-word">{{ word() }} <span class="curson"></span></span>
+  </h2>
+  <p class="skills-sub">The technologies I work with, grouped by where they fit.</p>
+
+  <div class="skill-rows">
+    @for (cat of categories; track cat.label) {
+      <div class="skill-row" [style.--c]="cat.color">
+        <div class="row-label">
+          <span class="row-dot"></span>
+          <h3>{{ cat.label }}</h3>
+        </div>
+        <div class="chips">
+          @for (s of cat.skills; track s.name) {
+            <span class="chip">
+              @if (s.icon) {
+                <img [src]="s.icon" [alt]="s.name" />
+              }
+              {{ s.name }}
+            </span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

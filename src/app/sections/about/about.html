@@ -1,1 +1,53 @@
-<p>about works!</p>
+<section class="about-section" id="about">
+  <div class="section-head">
+    <p class="eyebrow">/about</p>
+    <span class="section-divider"></span>
+  </div>
+
+  <div class="about-grid">
+    <!-- LEFT: image -->
+    <div class="about-image">
+      <div class="image-frame">
+        <img src="assets/lakshay.jpg" alt="Lakshay Garg" />
+      </div>
+      <div class="image-glow"></div>
+    </div>
+
+    <!-- RIGHT: about me -->
+    <div class="about-content">
+      <h2 class="about-heading">
+        Engineering Products That <span class="accent-cyan">Scale, Perform, and Deliver Value</span>
+      </h2>
+
+      <p class="about-body">
+        I'm a software developer with 3+ years of experience building production-grade web
+        applications across healthcare, fintech, and enterprise domains. My expertise spans
+        <span class="accent-amber">Angular</span>, <span class="accent-amber">Node.js</span>, REST
+        APIs, and modern web architectures — with a focus on turning complex business requirements
+        into reliable, scalable functionality.
+      </p>
+
+      <p class="about-body">
+        I've led major modernization efforts — including Angular and Node.js version upgrades that
+        cut technical debt and lifted performance — and I care most about clean architecture and
+        code that holds up long after it ships. I hold a B.Tech in Computer Science from The
+        NorthCap University.
+      </p>
+
+      <div class="focus-chips">
+        @for (tech of focus; track tech) {
+          <span class="chip">{{ tech }}</span>
+        }
+      </div>
+
+      <div class="stats-grid">
+        @for (s of stats; track s.label) {
+          <div class="stat-card">
+            <span class="stat-value">{{ s.value }}</span>
+            <span class="stat-label">{{ s.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
