@@ -1,0 +1,56 @@
+<section class="hero">
+  <div class="orbit-system">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+
+    <div class="orbit-center">
+      <p class="greeting">
+        <span class="accent-cyan">const</span> developer =
+        <span class="accent-amber">"{{ name }}"</span>
+      </p>
+
+      <!-- single cycling role line with typewriter + blinking cursor -->
+      <p class="role-line">
+        A Passionate <span class="accent-cyan">{{ typedRole() }}</span
+        ><span class="cursor"></span>
+      </p>
+
+      <p class="about">
+        I build end-to-end web applications with Angular and Node.js, with strong DSA fundamentals
+        and a focus on clean, production-ready code.
+      </p>
+    </div>
+
+    <!-- RING 3 (inner icon ring) -->
+    <div class="orbit orbit-3">
+      @for (p of ring3Planets; track p.name) {
+        <div class="planet planet-3" [style.--angle.deg]="p.angle">
+          <div class="planet-spin-3">
+            <img [src]="p.icon" [alt]="p.name" />
+            <span class="planet-label">{{ p.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- RING 4 (outer icon ring) -->
+    <div class="orbit orbit-4">
+      @for (p of ring4Planets; track p.name) {
+        <div class="planet planet-4" [style.--angle.deg]="p.angle">
+          <div class="planet-spin-4">
+            <img [src]="p.icon" [alt]="p.name" />
+            <span class="planet-label">{{ p.name }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <aside class="mantra-card">
+    <span class="quote-mark">&ldquo;</span>
+    <p class="mantra-text">From concept to code. From code to reality.</p>
+    <p class="mantra-author">— LAKSHAY</p>
+  </aside>
+</section>

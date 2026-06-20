@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 4%;
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: gray;
+  font-weight: 600;
+}
+
+.logo:hover {
+  color: #27cbcb;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: gray;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  color: #27cbcb;
+}
