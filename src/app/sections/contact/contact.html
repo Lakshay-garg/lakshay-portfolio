@@ -1,1 +1,98 @@
-<p>contact works!</p>
+<section class="contact-section" id="contact">
+  <div class="section-head">
+    <p class="eyebrow">/contact</p>
+    <span class="section-divider"></span>
+  </div>
+
+  <h2 class="contact-heading">Let's build something <span class="accent-cyan">together</span></h2>
+  <p class="contact-sub">
+    Open to full-stack and frontend roles, freelance work, or just a good conversation. Drop me a
+    message and I'll get back to you.
+  </p>
+
+  <div class="contact-grid">
+    <!-- LEFT: form -->
+    <form class="contact-form" (ngSubmit)="submit()">
+      <!-- honeypot: hidden from humans, bots fill it -->
+      <input
+        class="hp-field"
+        type="text"
+        name="company"
+        [(ngModel)]="honeypot"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      />
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          [(ngModel)]="name"
+          placeholder="Your name"
+          autocomplete="name"
+          maxlength="80"
+        />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          maxlength="254"
+        />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          [(ngModel)]="message"
+          placeholder="What's on your mind?"
+          maxlength="2000"
+        ></textarea>
+      </div>
+
+      <!-- all validation / error messages, in one place -->
+      @if (errorList().length > 0) {
+        <ul class="error-list">
+          @for (e of errorList(); track e) {
+            <li>{{ e }}</li>
+          }
+        </ul>
+      }
+
+      <button type="submit" class="send-btn" [disabled]="sending()">
+        {{ sending() ? 'Sending…' : 'Send message →' }}
+      </button>
+
+      @if (status() === 'success') {
+        <p class="form-note success">Thanks — your message is on its way.</p>
+      }
+    </form>
+
+    <!-- RIGHT: direct links -->
+    <div class="contact-links">
+      <p class="links-label">Or reach me directly</p>
+      @for (s of socials; track s.label) {
+        <a class="link-row" [href]="s.href" target="_blank" rel="noopener">
+          <span class="link-icon" [attr.data-icon]="s.icon"></span>
+          <span class="link-text">
+            <span class="link-label">{{ s.label }}</span>
+            <span class="link-value">{{ s.value }}</span>
+          </span>
+          <span class="link-arrow">↗</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

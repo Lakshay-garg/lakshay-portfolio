@@ -273,13 +273,3 @@
   }
 }
 
-/* ---- accessibility ---- */
-@media (prefers-reduced-motion: reduce) {
-  .orbit,
-  .planet-spin-3,
-  .planet-spin-4,
-  .mantra-card,
-  .cursor {
-    animation: none !important;
-  }
-}

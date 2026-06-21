@@ -1,1 +1,55 @@
-<p>experience works!</p>
+<section class="exp-section" id="experience">
+  <div class="section-head">
+    <p class="eyebrow">/experience</p>
+    <span class="section-divider"></span>
+  </div>
+
+  <h2 class="exp-heading">Where I've <span class="accent-cyan">shipped</span></h2>
+  <p class="exp-sub">
+    3 years, 3 teams, production code across healthcare, fintech, and enterprise.
+  </p>
+
+  <div class="timeline">
+    @for (role of roles; track role.company) {
+      <article class="tl-item" [style.--c]="role.color">
+        <!-- marker on the line -->
+        <div class="tl-marker">
+          <span class="tl-dot"></span>
+        </div>
+
+        <!-- role card -->
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <div>
+              <h3 class="tl-company">
+                {{ role.company }}
+                @if (role.current) {
+                  <span class="badge-now">Now</span>
+                }
+              </h3>
+              <p class="tl-title">{{ role.title }}</p>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-period">{{ role.period }}</span>
+              @if (role.location) {
+                <span class="tl-loc">{{ role.location }}</span>
+              }
+            </div>
+          </div>
+
+          <ul class="tl-points">
+            @for (p of role.points; track p) {
+              <li>{{ p }}</li>
+            }
+          </ul>
+
+          <div class="tl-tags">
+            @for (t of role.tags; track t) {
+              <span class="tl-tag">{{ t }}</span>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
