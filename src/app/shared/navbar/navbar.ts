@@ -8,5 +8,13 @@ import { ThemeService } from '../../services/theme-service';
   styleUrl: './navbar.css',
 })
 export class Navbar {
- 
+  isOpen = false;
+
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+  }
+
+  closeMenu() {
+    this.isOpen = false;
+  }
 }

@@ -273,3 +273,58 @@
   }
 }
 
+/* ---- phones: shrink so the outer ring fits the screen ---- */
+@media (max-width: 560px) {
+  .orbit-system {
+    width: 92vw;
+    height: 92vw;
+    max-width: 360px;
+    max-height: 360px;
+  }
+  /* size rings as a proportion of the system so nothing clips */
+  .ring-1 {
+    width: 38%;
+    height: 38%;
+  }
+  .ring-2 {
+    width: 58%;
+    height: 58%;
+  }
+  .ring-3 {
+    width: 76%;
+    height: 76%;
+  }
+  .ring-4 {
+    width: 96%;
+    height: 96%;
+  }
+
+  /* radius must track the smaller rings — keep planets ON the rings */
+  .planet-3 {
+    --radius: 38vw;
+  }
+  .planet-4 {
+    --radius: 47vw;
+  }
+
+  .planet img {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+  }
+  .planet-label {
+    font-size: 0.6rem;
+  }
+
+  .orbit-center {
+    max-width: 78vw;
+    transform: translateY(-10px);
+  }
+  .role-line {
+    font-size: 1.15rem;
+  }
+  .about {
+    font-size: 0.8rem;
+    max-width: 80vw;
+  }
+}

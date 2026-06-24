@@ -1,10 +1,17 @@
 <nav class="navbar">
   <div class="logo">&lt;/lakshay&gt;</div>
-  <ul class="nav-links">
-    <li><a href="#about">/about</a></li>
-    <li><a href="#skills">/skills</a></li>
-    <li><a href="#experience">/experience</a></li>
-    <!-- <li><a href="#projects">/projects</a></li> -->
-    <li><a href="#contact">/contact</a></li>
+  <button
+    class="menu-toggle"
+    aria-label="Toggle menu"
+    [attr.aria-expanded]="isOpen"
+    (click)="toggleMenu()"
+  >
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" [class.open]="isOpen">
+    <li><a href="#about" (click)="closeMenu()">/about</a></li>
+    <li><a href="#skills" (click)="closeMenu()">/skills</a></li>
+    <li><a href="#experience" (click)="closeMenu()">/experience</a></li>
+    <li><a href="#contact" (click)="closeMenu()">/contact</a></li>
   </ul>
 </nav>

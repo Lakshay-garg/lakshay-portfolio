@@ -1,7 +1,9 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 2% 4%;
+  position: relative;
 }
 
 .logo {
@@ -17,6 +19,8 @@
   display: flex;
   list-style: none;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
@@ -27,4 +31,45 @@
 
 .nav-links li a:hover {
   color: #27cbcb;
+}
+
+/* Hamburger button — hidden on desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: gray;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background: #1a1a1a; /* match your site bg */
+    padding: 20px;
+    gap: 18px;
+    border-radius: 8px;
+    display: none; /* hidden until toggled */
+    min-width: 160px;
+    z-index: 5;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
 }
