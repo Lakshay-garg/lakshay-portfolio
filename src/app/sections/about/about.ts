@@ -20,5 +20,5 @@ export class About {
   ];
 
   // tech you want highlighted as chips under the bio
-  focus = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'REST APIs', 'PWA', 'Jest'];
+  focus = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'REST APIs', 'PWA'];
 }
