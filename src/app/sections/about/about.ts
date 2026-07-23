@@ -14,11 +14,11 @@ interface Stat {
 export class About {
   stats: Stat[] = [
     { value: '3+', label: 'Years experience' },
-    { value: '3', label: 'Companies' },
-    { value: '8+', label: 'Apps shipped' },
-    { value: '70%', label: 'Test coverage' },
+    { value: '4', label: 'Framework migrations' },
+    { value: 'v9→v20', label: 'Angular versions shipped' },
+    { value: '70%', label: 'Jest test coverage' },
   ];
 
   // tech you want highlighted as chips under the bio
-  focus = ['Angular', 'TypeScript', 'Node.js', 'React.js', 'REST APIs', 'Angular Material'];
+  focus = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'REST APIs', 'PWA', 'Jest'];
 }

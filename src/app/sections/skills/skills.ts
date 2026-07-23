@@ -79,7 +79,7 @@ export class Skills {
     {
       label: 'Database',
       color: '#fb923c',
-      skills: [{ name: 'MySQL', icon: 'assets/icons/mysql.svg' }],
+      skills: [{ name: 'MySQL', icon: 'assets/icons/mysql.svg' },{ name: 'MongoDB', icon: 'assets/icons/mongo.svg' }],
     },
     {
       label: 'Concepts',
